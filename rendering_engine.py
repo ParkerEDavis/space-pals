@@ -4,6 +4,8 @@ import pygame
 class RenderingEngine:
     def __init__(self, window):
         self.window = window
+
+        self.layers = {}
     
 
     def testFunc(self, test_flag):

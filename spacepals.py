@@ -27,7 +27,7 @@ class SpacePals:
         self.running = True
     
 
-    def eventHandler(self):
+    def inputHandler(self):
         for event in pygame.event.get():
             # The Quit Button
             if event.type == pygame.QUIT:
@@ -48,7 +48,7 @@ class SpacePals:
     def run(self):
         while self.running:
             # Grab Events
-            self.eventHandler()
+            self.inputHandler()
 
             # Update
 
