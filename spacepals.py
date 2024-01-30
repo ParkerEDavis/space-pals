@@ -1,6 +1,6 @@
 import pygame
 import rendering_engine
-
+import directory
 
 class SpacePals:
     def __init__(self):
@@ -9,8 +9,14 @@ class SpacePals:
         self.window_height = 720
         self.window = pygame.display.set_mode((self.window_width, self.window_height))
 
+        # Generate directory first
+        self.directory = directory.Directory(self.window)
+
         # Initialize Modules
         self.renderer = rendering_engine.RenderingEngine(self.window)
+
+        # Link Modules to Directory
+        self.directory.rendering_engine = self.renderer
 
         # Test Zone
         self.test_flag = False
