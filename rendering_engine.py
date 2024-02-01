@@ -49,6 +49,9 @@ class RenderingEngine:
     def draw(self):
         self.window.fill((200, 100, 100))
 
+        for object in self.directory.objects:
+            object.draw()
+
         for layer in self.sorted_layers:
             self.window.blit(layer.surface, (0, 0))
         

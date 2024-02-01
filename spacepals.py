@@ -1,6 +1,7 @@
 import pygame
 import rendering_engine
 import directory
+import button
 
 class SpacePals:
     def __init__(self):
@@ -26,8 +27,11 @@ class SpacePals:
         self.rendering_engine.createLayer('C', 1)
 
         self.rendering_engine.layers['A'].surface.blit(pygame.transform.scale(pygame.image.load("assets/images/A.png"), (200, 200)), (100, 100))
-        self.rendering_engine.layers['B'].surface.blit(pygame.transform.scale(pygame.image.load("assets/images/B.png"), (200, 200)), (200, 200))
+        #self.rendering_engine.layers['B'].surface.blit(pygame.transform.scale(pygame.image.load("assets/images/B.png"), (200, 200)), (200, 200))
         self.rendering_engine.layers['C'].surface.blit(pygame.transform.scale(pygame.image.load("assets/images/C.png"), (200, 200)), (300, 300))
+
+        self.butttest = button.Button(self.directory, 200, 200, 200, 200, "B", "testFunc", (100, 100, 255))
+        self.directory.objects.append(self.butttest)
 
         # Make sure the game runs properly.
         self.FPS = 60
