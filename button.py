@@ -21,7 +21,7 @@ class Button:
         self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
 
         # Layer
-        self.layer = layer
+        self.surface = self.directory.rendering_engine.layers[layer].surface
 
         # What flag is sent to the future flag handler when this is pushed.
         self.flag = flag
@@ -30,4 +30,4 @@ class Button:
     
 
     def draw(self):
-        pygame.draw.rect(self.directory.rendering_engine.layers[self.layer].surface, self.color, self.rect)
+        pygame.draw.rect(self.surface, self.color, self.rect)
