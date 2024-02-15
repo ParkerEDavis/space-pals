@@ -6,4 +6,6 @@ class Directory:
         self.window = window
         self.rendering_engine = False
 
+        self.objects = []
+
         self.test_flag = False
